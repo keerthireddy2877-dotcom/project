@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWaste Solutions - Smart Waste Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+<!-- Add in nav bar -->
+  <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                            
+                            <span class="text-white font-bold text-xl">♻️</span>
+                        </div>
+                        <span class="text-2xl font-bold text-gray-800">EcoWaste Solutions</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-green-600 font-medium transition-colors">Home</a>
+                    <a href="#solutions" class="text-gray-700 hover:text-green-600 font-medium transition-colors">Solutions</a>
+                    <a href="#services" class="text-gray-700 hover:text-green-600 font-medium transition-colors">Services</a>
+                    <a href="#contact" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<a href="#admin" class="text-gray-700 hover:text-green-600 font-medium transition-colors">Admin Dashboard</a>
+
+<!-- Place after contact/footer, or on a new standalone file for /admin.html -->
+<section id="admin" class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-8 text-gray-800">Admin Dashboard</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-green-100 p-8 rounded-xl shadow text-gray-700">
+        <h3 class="font-bold text-xl mb-4">Users</h3>
+        <p>Manage and review user registrations.</p>
+      </div>
+      <div class="bg-blue-100 p-8 rounded-xl shadow text-gray-700">
+        <h3 class="font-bold text-xl mb-4">Bins</h3>
+        <p>Track, add, and remove smart bins.</p>
+      </div>
+      <div class="bg-purple-100 p-8 rounded-xl shadow text-gray-700">
+        <h3 class="font-bold text-xl mb-4">Reports</h3>
+        <p>View analytics and performance reports.</p>
+      </div>
+    </div>
+    <!-- Example: Add more admin features or tables here -->
+  </div>
+</section>
+
+
+   
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-5xl font-bold mb-6 leading-tight">Smart Waste Management for a Cleaner Tomorrow</h1>
+                    <p class="text-xl mb-8 text-blue-100">Revolutionary IoT-powered solutions that optimize waste collection, reduce costs, and create sustainable communities.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToSection('solutions')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Explore Solutions</button>
+                        <button onclick="openDemo()" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">Watch Demo</button>
+                    </div>
+                </div>
+                <div class="animate-float">
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Live Dashboard</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-4 bg-green-50 rounded-lg">
+                                <span class="font-medium">🗑️ Bins Monitored</span>
+                                <span class="text-2xl font-bold text-green-600" id="binsCount">1,247</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg">
+                                <span class="font-medium">📊 Collection Efficiency</span>
+                                <span class="text-2xl font-bold text-blue-600" id="efficiency">94%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-purple-50 rounded-lg">
+                                <span class="font-medium">💰 Cost Savings</span>
+                                <span class="text-2xl font-bold text-purple-600" id="savings">$127K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Real-World Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our comprehensive waste management platform addresses every aspect of modern waste collection and processing.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Smart Bins -->
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-3xl">🗑️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Smart Bin Network</h3>
+                    <p class="text-gray-600 mb-6">IoT-enabled bins with fill-level sensors, GPS tracking, and real-time monitoring for optimal collection routes.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Real-time fill monitoring</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> GPS location tracking</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Automated alerts</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Solar-powered sensors</li>
+                    </ul>
+                </div>
+
+                <!-- Route Optimization -->
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-3xl">🚛</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Route Optimization</h3>
+                    <p class="text-gray-600 mb-6">AI-powered route planning that reduces fuel costs by up to 40% and improves collection efficiency.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Dynamic route planning</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Traffic optimization</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Fuel cost reduction</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Driver mobile app</li>
+                    </ul>
+                </div>
+
+                <!-- Analytics Platform -->
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-3xl">📊</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Analytics Dashboard</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive reporting and analytics for data-driven waste management decisions.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Real-time reporting</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Predictive analytics</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Cost analysis</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Environmental impact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">See It In Action</h2>
+                <p class="text-xl text-gray-600">Experience our waste management system through this interactive demo</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Map Simulation -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Live Collection Map</h3>
+                        <div class="bg-gray-100 rounded-lg h-80 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-green-200 to-blue-200 opacity-50"></div>
+                            <div class="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
+                                <div class="text-sm font-medium text-gray-600">Active Routes</div>
+                                <div class="text-2xl font-bold text-green-600" id="activeRoutes">12</div>
+                            </div>
+                            
+                            <!-- Animated bins -->
+                            <div class="absolute top-20 left-16 w-4 h-4 bg-red-500 rounded-full animate-pulse" title="Full bin"></div>
+                            <div class="absolute top-32 left-32 w-4 h-4 bg-yellow-500 rounded-full animate-pulse" title="Half full"></div>
+                            <div class="absolute top-24 right-20 w-4 h-4 bg-green-500 rounded-full" title="Empty bin"></div>
+                            <div class="absolute bottom-20 left-20 w-4 h-4 bg-red-500 rounded-full animate-pulse" title="Full bin"></div>
+                            <div class="absolute bottom-32 right-32 w-4 h-4 bg-yellow-500 rounded-full" title="Half full"></div>
+                            
+                            <!-- Truck animation -->
+                            <div class="absolute bottom-40 left-40 text-2xl animate-bounce" id="truck">🚛</div>
+                        </div>
+                    </div>
+
+                    <!-- Control Panel -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Control Panel</h3>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">Collection Status</span>
+                                    <span class="text-green-600 font-bold" id="collectionStatus">Active</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full transition-all duration-1000" style="width: 65%" id="progressBar"></div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <button onclick="startCollection()" class="bg-green-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors">Start Collection</button>
+                                <button onclick="optimizeRoute()" class="bg-blue-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">Optimize Route</button>
+                            </div>
+
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h4 class="font-bold text-gray-800 mb-2">Today's Metrics</h4>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex justify-between">
+                                        <span>Bins Collected:</span>
+                                        <span class="font-bold" id="binsCollected">47</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Fuel Saved:</span>
+                                        <span class="font-bold text-green-600" id="fuelSaved">23%</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>CO₂ Reduced:</span>
+                                        <span class="font-bold text-green-600" id="co2Reduced">156 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive waste management solutions for every need</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl">🏢</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Commercial</h3>
+                    <p class="text-gray-600">Office buildings, shopping centers, and business districts</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl">🏘️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Residential</h3>
+                    <p class="text-gray-600">Neighborhoods, apartments, and housing communities</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl">🏭</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Industrial</h3>
+                    <p class="text-gray-600">Manufacturing plants and industrial facilities</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-4xl">🏥</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Healthcare</h3>
+                    <p class="text-gray-600">Hospitals and medical waste management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Get Started Today</h2>
+                <p class="text-xl text-gray-600">Ready to revolutionize your waste management? Contact us for a free consultation.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                <option>Commercial</option>
+                                <option>Residential</option>
+                                <option>Industrial</option>
+                                <option>Healthcare</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Tell us about your waste management needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">♻️</span>
+                        </div>
+                        <span class="text-xl font-bold">EcoWaste Solutions</span>
+                    </div>
+                    <p class="text-gray-400">Making waste management smarter, cleaner, and more sustainable for communities worldwide.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Solutions</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Smart Bins</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Route Optimization</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Analytics</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mobile Apps</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Commercial</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Residential</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Industrial</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Healthcare</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 info@ecowaste.com</li>
+                        <li>📞 +1 (555) 123-4567</li>
+                        <li>📍 123 Green Street, Eco City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 EcoWaste Solutions. All rights reserved. | Making the world cleaner, one bin at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Demo functions
+        function openDemo() {
+            alert('🎥 Demo video would open here! Our interactive demo shows real-time waste collection optimization in action.');
+        }
+
+        function startCollection() {
+            const status = document.getElementById('collectionStatus');
+            const progress = document.getElementById('progressBar');
+            const truck = document.getElementById('truck');
+            
+            status.textContent = 'Collecting...';
+            status.className = 'text-blue-600 font-bold';
+            
+            // Animate progress bar
+            let width = 65;
+            const interval = setInterval(() => {
+                width += 2;
+                progress.style.width = width + '%';
+                if (width >= 100) {
+                    clearInterval(interval);
+                    status.textContent = 'Complete';
+                    status.className = 'text-green-600 font-bold';
+                    updateMetrics();
+                }
+            }, 100);
+            
+            // Move truck
+            truck.style.transform = 'translateX(50px)';
+            setTimeout(() => {
+                truck.style.transform = 'translateX(0px)';
+            }, 3000);
+        }
+
+        function optimizeRoute() {
+            const routes = document.getElementById('activeRoutes');
+            const currentRoutes = parseInt(routes.textContent);
+            const optimizedRoutes = Math.max(8, currentRoutes - 2);
+            
+            routes.textContent = optimizedRoutes;
+            
+            // Show optimization message
+            const message = document.createElement('div');
+            message.className = 'fixed top-20 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            message.textContent = `Route optimized! Reduced from ${currentRoutes} to ${optimizedRoutes} routes.`;
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                message.remove();
+            }, 3000);
+        }
+
+        function updateMetrics() {
+            const binsCollected = document.getElementById('binsCollected');
+            const fuelSaved = document.getElementById('fuelSaved');
+            const co2Reduced = document.getElementById('co2Reduced');
+            
+            binsCollected.textContent = parseInt(binsCollected.textContent) + 5;
+            fuelSaved.textContent = (parseInt(fuelSaved.textContent) + 2) + '%';
+            co2Reduced.textContent = (parseInt(co2Reduced.textContent) + 12) + ' kg';
+        }
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const message = document.createElement('div');
+            message.className = 'fixed top-20 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            message.textContent = '✅ Message sent! We\'ll contact you within 24 hours.';
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                message.remove();
+            }, 4000);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Animate dashboard numbers on load
+        function animateNumbers() {
+            const bins = document.getElementById('binsCount');
+            const efficiency = document.getElementById('efficiency');
+            const savings = document.getElementById('savings');
+            
+            animateValue(bins, 0, 1247, 2000);
+            animateValue(efficiency, 0, 94, 2000, '%');
+            animateValue(savings, 0, 127, 2000, '$', 'K');
+        }
+
+        function animateValue(element, start, end, duration, prefix = '', suffix = '') {
+            const range = end - start;
+            const increment = range / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = prefix + Math.floor(current) + suffix;
+            }, 16);
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', () => {
+            setTimeout(animateNumbers, 500);
+        });
+
+        // Update live metrics periodically
+        setInterval(() => {
+            const bins = document.getElementById('binsCount');
+            const currentCount = parseInt(bins.textContent);
+            bins.textContent = currentCount + Math.floor(Math.random() * 3);
+        }, 5000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9819771d02f59a84',t:'MTc1ODI4ODkxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
